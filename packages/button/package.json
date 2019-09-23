@@ -8,7 +8,8 @@
   "moduleName": "cmp",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c ../../bin/rollup.config.js"
+    "build": "rollup -c ../../bin/rollup.config.js",
+    "prepublishOnly": "npm run build"
   },
   "author": "",
   "license": "ISC",
