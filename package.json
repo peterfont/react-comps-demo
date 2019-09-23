@@ -1,6 +1,6 @@
 {
   "name": "react-comps-demo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Package to print some random fruit I eat.",
   "main": "dist/index.cjs.js",
   "browser": "dist/index.umd.js",
@@ -11,7 +11,6 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "prepublishOnly": "npm run build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "es-check": "es-checker",
