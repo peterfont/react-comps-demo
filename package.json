@@ -13,7 +13,9 @@
     "build": "rollup -c",
     "prepublishOnly": "npm run build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "es-check": "es-checker",
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -26,8 +28,12 @@
     "@storybook/addon-links": "^5.2.1",
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.1",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "core-js": "^2.6.9",
+    "es-checker": "^1.4.2",
+    "jest": "^24.9.0",
+    "jest-enzyme": "^7.1.1",
     "lerna": "^3.16.4",
     "rollup": "^1.21.4",
     "rollup-plugin-babel": "^4.3.3",

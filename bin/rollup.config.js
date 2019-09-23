@@ -1,18 +1,21 @@
-import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
-import pkg from './package.json';
+import path from 'path';
+const commonjs = require('rollup-plugin-commonjs');
+const babelConfig = require('./babel-config/index.js');
+const input = 'src/index.js';
+const pkg = require(path.resolve(process.cwd(), './package.json'));
 
-const input = 'src/main.js';
 const plugins = [
   resolve(),
   commonjs({
-    exclude: 'src/**',
-    namedExports: { 'react': ['createElement', 'Component' ] },  // Default: undefined
+    exclude: path.resolve(process.cwd(), './src/**'),
   }),
   babel({
-    exclude: 'node_modules/**'
+    exclude: 'node_modules/**',
+    babelrc: false,
+    ...babelConfig,
   }),
 ];
 const external = ['react'];
