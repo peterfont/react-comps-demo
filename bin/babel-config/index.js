@@ -1,3 +1,4 @@
+const browserlist = require('../browserlist-config/index.js');
 module.exports = {
   "presets": [
     [
@@ -8,7 +9,7 @@ module.exports = {
           "version": 2,
           "proposals" : true
         },
-        "targets": "last 1 version, > 1%, not dead"
+        "targets": browserlist
       }
     ],
     [
