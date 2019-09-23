@@ -7,7 +7,7 @@ const browserlist = require('../browserlist-config/index.js');
 // const cssExportMap = {};
 
 module.exports =  postcss({
-  extract: true,
+  extract: false,
   modules: true,
   plugins: [
     // postcssModules({
