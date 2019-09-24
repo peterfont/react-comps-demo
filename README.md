@@ -9,10 +9,3 @@
 利用rollup来构建组件代码，支持es，commonJs，umd的模块输出。
 
 利用lerna来管理组件库的依赖管理和发版控制。
-
-配置文件：
-
-```
-.babelrc
-.browserlistrc
-```

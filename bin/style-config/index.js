@@ -1,30 +1,22 @@
 const postcss = require('rollup-plugin-postcss');
 const autoprefixer = require('autoprefixer')
 const browserlist = require('../browserlist-config/index.js');
-
-// import postcssModules from 'postcss-modules';
-
-// const cssExportMap = {};
+const cssUrl = require('postcss-url');
+const path = require('path');
 
 module.exports =  postcss({
-  extract: false,
+  extract: true,
   modules: true,
   plugins: [
-    // postcssModules({
-    //   getJSON (id, exportTokens) {
-    //     console.log('xxxx', id, exportTokens);
-    //     cssExportMap[id] = exportTokens;
-    //   }
-    // }),
+    cssUrl({
+      url: 'copy',
+      basePath: path.resolve(process.cwd(), './src/'),
+      assetsPath: path.resolve(process.cwd(), './dist/img'),
+      useHash: true
+    }),
     require("postcss-flexbugs-fixes"), // 支持flex
     autoprefixer({
       overrideBrowserslist: browserlist,
-      // [
-      //   ">1%",
-      //   "last 4 versions",
-      //   "Firefox ESR",
-      //   "not ie < 9" // React doesn't support IE8 anyway
-      // ],
       flexbox: "no-2009"
     }),
   ]

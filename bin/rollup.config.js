@@ -1,17 +1,25 @@
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
+import svgr from '@svgr/rollup';
 import path from 'path';
 const commonjs = require('rollup-plugin-commonjs');
 const babelConfig = require('./babel-config/index.js');
 const postcssConfig =  require('./style-config/index.js');
+const url = require("rollup-plugin-url");
+
 
 const input = 'src/index.js';
 const pkg = require(path.resolve(process.cwd(), './package.json'));
 
 const plugins = [
   resolve(),
+  url({
+    limit: 10 * 1024, // inline files < 10k, copy files > 10k
+    emitFiles: true // defaults to true
+  }),
   postcssConfig,
+  svgr(),
   commonjs({
     exclude: path.resolve(process.cwd(), './src/**'),
   }),
