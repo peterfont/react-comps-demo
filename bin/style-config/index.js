@@ -9,7 +9,7 @@ module.exports =  postcss({
   modules: true,
   plugins: [
     cssUrl({
-      url: 'copy',
+      url: 'copy', // inline 
       basePath: path.resolve(process.cwd(), './src/'),
       assetsPath: path.resolve(process.cwd(), './dist/img'),
       useHash: true
