@@ -6,7 +6,7 @@ module.exports = {
       {
         "useBuiltIns": "usage",
         "corejs": {
-          "version": 2,
+          "version": 3,
           "proposals" : true
         },
         "targets": browserlist

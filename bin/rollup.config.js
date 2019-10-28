@@ -6,17 +6,16 @@ import path from 'path';
 const commonjs = require('rollup-plugin-commonjs');
 const babelConfig = require('./babel-config/index.js');
 const postcssConfig =  require('./style-config/index.js');
-const url = require("rollup-plugin-url");
-
-
-const input = 'src/index.js';
+const url = require('rollup-plugin-url');
 const pkg = require(path.resolve(process.cwd(), './package.json'));
-
+const publicPath = require('./publicPath');
+const input = 'src/index.js';
 const plugins = [
   resolve(),
   url({
     limit: 10 * 1024, // inline files < 10k, copy files > 10k
-    emitFiles: true // defaults to true
+    emitFiles: true, // defaults to true
+    publicPath
   }),
   postcssConfig,
   svgr(),

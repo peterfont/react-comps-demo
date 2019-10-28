@@ -31,7 +31,7 @@
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-react-css-modules": "^5.2.6",
-    "core-js": "^2.6.9",
+    "core-js": "^3.3.4",
     "es-checker": "^1.4.2",
     "jest": "^24.9.0",
     "jest-enzyme": "^7.1.1",
