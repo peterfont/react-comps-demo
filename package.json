@@ -37,7 +37,7 @@
     "jest-enzyme": "^7.1.1",
     "lerna": "^3.16.4",
     "less": "^3.10.3",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-modules": "^1.4.1",
     "postcss-url": "^8.0.0",
